@@ -19,7 +19,12 @@ defmodule Robert.Watcher do
     |> Map.put(:id, name)
     |> Map.put(:restart, :transient)
 
-    Supervisor.start_child(dest, spec)
+    case Supervisor.start_child(dest, spec) do
+      {:error, :already_present} ->
+        Supervisor.restart_child(dest, name)
+      other ->
+        other
+    end
   end
 
   def delete_child(name) do
