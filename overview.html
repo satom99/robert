@@ -65,9 +65,9 @@ robert      </h1>
 
 <p>Currently there is no package published on Hex and
 instead one must include Robert as follows.</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">defp</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="3834069494-1">do</span><span class="w">
-  </span><span class="p" data-group-id="3834069494-2">[</span><span class="p" data-group-id="3834069494-3">{</span><span class="ss">:robert</span><span class="p">,</span><span class="w"> </span><span class="ss">git</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/satom99/robert.git&quot;</span><span class="p" data-group-id="3834069494-3">}</span><span class="p" data-group-id="3834069494-2">]</span><span class="w">
-</span><span class="k" data-group-id="3834069494-1">end</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="kd">defp</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="2139345235-1">do</span><span class="w">
+  </span><span class="p" data-group-id="2139345235-2">[</span><span class="p" data-group-id="2139345235-3">{</span><span class="ss">:robert</span><span class="p">,</span><span class="w"> </span><span class="ss">git</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/satom99/robert.git&quot;</span><span class="p" data-group-id="2139345235-3">}</span><span class="p" data-group-id="2139345235-2">]</span><span class="w">
+</span><span class="k" data-group-id="2139345235-1">end</span></code></pre>
 <p>Once installed, be sure to depend on other libraries to
 handle node discovery automatically for you.</p>
 <h3 id="usage" class="section-heading">
@@ -77,25 +77,25 @@ handle node discovery automatically for you.</p>
 
 <p>Make sure the local node is connected to the cluster before
 Robert is started to prevent any slowdown.</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">Example</span><span class="w"> </span><span class="k" data-group-id="6853819209-1">do</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">Example</span><span class="w"> </span><span class="k" data-group-id="6627386336-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">GenServer</span><span class="w">
 
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">start_link</span><span class="p" data-group-id="6853819209-2">(</span><span class="n">state</span><span class="p" data-group-id="6853819209-2">)</span><span class="w"> </span><span class="k" data-group-id="6853819209-3">do</span><span class="w">
-    </span><span class="nc">GenServer</span><span class="o">.</span><span class="n">start_link</span><span class="p" data-group-id="6853819209-4">(</span><span class="bp">__MODULE__</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6853819209-4">)</span><span class="w">
-  </span><span class="k" data-group-id="6853819209-3">end</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">start_link</span><span class="p" data-group-id="6627386336-2">(</span><span class="n">state</span><span class="p" data-group-id="6627386336-2">)</span><span class="w"> </span><span class="k" data-group-id="6627386336-3">do</span><span class="w">
+    </span><span class="nc">GenServer</span><span class="o">.</span><span class="n">start_link</span><span class="p" data-group-id="6627386336-4">(</span><span class="bp">__MODULE__</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6627386336-4">)</span><span class="w">
+  </span><span class="k" data-group-id="6627386336-3">end</span><span class="w">
 
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">init</span><span class="p" data-group-id="6853819209-5">(</span><span class="n">state</span><span class="p" data-group-id="6853819209-5">)</span><span class="w"> </span><span class="k" data-group-id="6853819209-6">do</span><span class="w">
-    </span><span class="p" data-group-id="6853819209-7">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6853819209-7">}</span><span class="w">
-  </span><span class="k" data-group-id="6853819209-6">end</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">init</span><span class="p" data-group-id="6627386336-5">(</span><span class="n">state</span><span class="p" data-group-id="6627386336-5">)</span><span class="w"> </span><span class="k" data-group-id="6627386336-6">do</span><span class="w">
+    </span><span class="p" data-group-id="6627386336-7">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6627386336-7">}</span><span class="w">
+  </span><span class="k" data-group-id="6627386336-6">end</span><span class="w">
 
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">handle_call</span><span class="p" data-group-id="6853819209-8">(</span><span class="ss">:handoff</span><span class="p">,</span><span class="w"> </span><span class="c">_from</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6853819209-8">)</span><span class="w"> </span><span class="k" data-group-id="6853819209-9">do</span><span class="w">
-    </span><span class="p" data-group-id="6853819209-10">{</span><span class="ss">:stop</span><span class="p">,</span><span class="w"> </span><span class="ss">:normal</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6853819209-10">}</span><span class="w">
-  </span><span class="k" data-group-id="6853819209-9">end</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">handle_call</span><span class="p" data-group-id="6627386336-8">(</span><span class="ss">:handoff</span><span class="p">,</span><span class="w"> </span><span class="c">_from</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6627386336-8">)</span><span class="w"> </span><span class="k" data-group-id="6627386336-9">do</span><span class="w">
+    </span><span class="p" data-group-id="6627386336-10">{</span><span class="ss">:stop</span><span class="p">,</span><span class="w"> </span><span class="ss">:normal</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">state</span><span class="p" data-group-id="6627386336-10">}</span><span class="w">
+  </span><span class="k" data-group-id="6627386336-9">end</span><span class="w">
 
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">handle_cast</span><span class="p" data-group-id="6853819209-11">(</span><span class="p" data-group-id="6853819209-12">{</span><span class="ss">:handoff</span><span class="p">,</span><span class="w"> </span><span class="n">handed</span><span class="p" data-group-id="6853819209-12">}</span><span class="p">,</span><span class="w"> </span><span class="c">_state</span><span class="p" data-group-id="6853819209-11">)</span><span class="w"> </span><span class="k" data-group-id="6853819209-13">do</span><span class="w">
-    </span><span class="p" data-group-id="6853819209-14">{</span><span class="ss">:noreply</span><span class="p">,</span><span class="w"> </span><span class="n">handed</span><span class="p" data-group-id="6853819209-14">}</span><span class="w">
-  </span><span class="k" data-group-id="6853819209-13">end</span><span class="w">
-</span><span class="k" data-group-id="6853819209-1">end</span></code></pre>
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">handle_cast</span><span class="p" data-group-id="6627386336-11">(</span><span class="p" data-group-id="6627386336-12">{</span><span class="ss">:handoff</span><span class="p">,</span><span class="w"> </span><span class="n">handed</span><span class="p" data-group-id="6627386336-12">}</span><span class="p">,</span><span class="w"> </span><span class="c">_state</span><span class="p" data-group-id="6627386336-11">)</span><span class="w"> </span><span class="k" data-group-id="6627386336-13">do</span><span class="w">
+    </span><span class="p" data-group-id="6627386336-14">{</span><span class="ss">:noreply</span><span class="p">,</span><span class="w"> </span><span class="n">handed</span><span class="p" data-group-id="6627386336-14">}</span><span class="w">
+  </span><span class="k" data-group-id="6627386336-13">end</span><span class="w">
+</span><span class="k" data-group-id="6627386336-1">end</span></code></pre>
 <p>Whenever the cluster topology changes, Robert will shift
 processes to the corresponding nodes whilst also handing
 off state. A call with the event <code class="inline">:handoff</code> is sent to
